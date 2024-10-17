@@ -1,0 +1,80 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "bee",
+    "patterns": [
+        { "include": "#hash-selector" },
+        { "include": "#at-selector" },
+        { "include": "#interpolation" },
+        { "include": "#class-selector" },
+        { "include": "#keywords" },
+        { "include": "#strings" },
+        { "include": "#comments" },
+        { "include": "#html-tags" }
+    ],
+    "repository": {
+        "hash-selector": {
+            "name": "entity.name.tag.hashselector.beelang",
+            "match": "(#)(\\w+)",
+            "captures": {
+                "1": { "name": "punctuation.definition.tag.begin.beelang" },
+                "2": { "name": "entity.name.tag.hashselector.beelang" }
+            }
+        },
+        "at-selector": {
+            "name": "entity.name.tag.atselector.beelang",
+            "match": "(@)(\\w+)",
+            "captures": {
+                "1": { "name": "punctuation.definition.tag.begin.beelang" },
+                "2": { "name": "entity.name.tag.atselector.beelang" }
+            }
+        },
+        "interpolation": {
+            "name": "variable.interpolation.beelang",
+            "begin": "\\$\\{",
+            "end": "\\}",
+            "patterns": [
+                { "include": "#keywords" }
+            ]
+        },
+        "class-selector": {
+            "name": "entity.name.tag.classselector.beelang",
+            "match": "(\\.)(\\w+)",
+            "captures": {
+                "1": { "name": "punctuation.definition.tag.begin.beelang" },
+                "2": { "name": "entity.name.tag.classselector.beelang" }
+            }
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.beelang",
+                    "match": "\\b(if|while|for|return)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.beelang",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.beelang",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "comments": {
+            "name": "comment.line.beelang",
+            "match": "//.*$"
+        },
+        "html-tags": {
+            "patterns": [
+                {
+                    "name": "entity.name.tag.html",
+                    "match": "\\b(div|span|a|p|h[1-6]|img|table|tr|td|th|thead|tbody|tfoot|caption|col|colgroup|tbody|tfoot|thead)\\b"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.bee"
+}

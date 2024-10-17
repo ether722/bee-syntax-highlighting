@@ -1,0 +1,33 @@
+{
+  "name": "ether722",
+  "displayName": "Bee Syntax Highlighting",
+  "description": "Enhances Bee language development with custom syntax highlighting and support for .bee files.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ether722/bee-syntax-highlighting.git"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "beelang",
+        "aliases": ["bee", "beelang"],
+        "extensions": [".bee"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "beelang",
+        "scopeName": "source.bee",
+        "path": "./syntaxes/beelang.tmLanguage.json"
+      }
+    ]
+  }
+}

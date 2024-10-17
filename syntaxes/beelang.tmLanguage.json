@@ -1,5 +1,4 @@
 {
-    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
     "name": "bee",
     "patterns": [
         { "include": "#hash-selector" },
@@ -37,11 +36,11 @@
             ]
         },
         "class-selector": {
-            "name": "entity.name.tag.classselector.beelang",
+            "name": "entity.name.tag.css",
             "match": "(\\.)(\\w+)",
             "captures": {
                 "1": { "name": "punctuation.definition.tag.begin.beelang" },
-                "2": { "name": "entity.name.tag.classselector.beelang" }
+                "2": { "name": "entity.name.tag.css" }
             }
         },
         "keywords": {
@@ -71,7 +70,7 @@
             "patterns": [
                 {
                     "name": "entity.name.tag.html",
-                    "match": "\\b(div|span|a|p|h[1-6]|img|table|tr|td|th|thead|tbody|tfoot|caption|col|colgroup|tbody|tfoot|thead)\\b"
+                    "match": "\\b(div|span|a|p|h[1-6]|img|table|tr|td|th|thead|tbody|tfoot|caption|col|colgroup|tbody|tfoot|thead|ul|li|button)\\b"
                 }
             ]
         }
